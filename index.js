@@ -83,10 +83,14 @@ connection.query("SELECT * FROM role", function (err, res){
 }
 
 function employeeDepartments() {
-
+    var query = "SELECT employee.first_name, employee.last_name, employee.RoleID";
+    connection.query(query, function (err, res){
+        if (err) throw err;
+        console.table(res);
+        startTracking();
     
+})
 }
-
 
 
 function addDepartment() {
